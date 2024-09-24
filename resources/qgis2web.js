@@ -117,6 +117,19 @@ var map = new ol.Map({
 });
 
 
+    var searchLayer = new SearchLayer({
+      layer: lyr_Kecamatan_0,
+      colName: 'WADMKC',
+      zoom: 10,
+      collapsed: true,
+      map: map
+    });
+
+    map.addControl(searchLayer);
+    document.getElementsByClassName('search-layer')[0]
+    .getElementsByTagName('button')[0].className +=
+    ' fa fa-binoculars';
+    
 
 //initial view - epsg:3857 coordinates if not "Match project CRS"
 map.getView().fit([11848892.430736, -754991.422205, 11915437.879482, -707052.492844], map.getSize());
